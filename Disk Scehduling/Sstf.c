@@ -56,12 +56,15 @@ services it (marks as visited, adds distance to total), updates pos, and prints 
 
 Core Loop Logic:
 
-text
-For each of n requests:
-  Scan all unvisited requests
-  Pick the one with minimum |current_pos - req[j]|
-  Service it, add distance to total, mark visited
-  Move head to that position
+Initialize min = 9999 (large value) and index = -1
+
+For each unvisited request j: compute dist = abs(pos - req[j])
+
+If dist < min, update min = dist and index = j
+
+After scanning all requests, index holds the position of the closest unvisited request
+
+Service that request: visited[index] = 1, total += min, pos = req[index]
 
 Sample Execution
 

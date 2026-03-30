@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 void printFrames(int f[],int frames){
     for(int i=0;i<frames;i++){
